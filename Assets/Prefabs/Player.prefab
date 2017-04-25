@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 114849369912114756}
   - component: {fileID: 95002892424923316}
   - component: {fileID: 114460570618717824}
+  - component: {fileID: 114441816234852840}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1415,7 +1416,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1116331996168602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.449, z: 0}
+  m_LocalPosition: {x: 0, y: 0.334, z: 0.015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4002194582162244}
@@ -2207,6 +2208,22 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 15
   m_InterpolateMovement: 1
+--- !u!114 &114441816234852840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010137405080504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7fae8e57c8f3c41be5f76e59e306a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 4502427206012844}
+  handMount: {fileID: 0}
+  gunPivot: {fileID: 4319170670423796}
+  threshhold: 10
+  smoothing: 5
 --- !u!114 &114460570618717824
 MonoBehaviour:
   m_ObjectHideFlags: 1
