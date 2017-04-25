@@ -135,6 +135,15 @@ Prefab:
       propertyPath: onToggleShared.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1472829264715768, guid: 966a00af0ca0a444da3c08db2f4fcf9b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95757030468014528, guid: 966a00af0ca0a444da3c08db2f4fcf9b,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 966a00af0ca0a444da3c08db2f4fcf9b, type: 2}
   m_IsPrefabParent: 0
