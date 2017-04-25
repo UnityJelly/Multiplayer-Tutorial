@@ -519,13 +519,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4236042930291104}
+  - component: {fileID: 114266738273774906}
   m_Layer: 0
   m_Name: char_robotGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1482836094246932
 GameObject:
   m_ObjectHideFlags: 1
@@ -2112,8 +2113,8 @@ MonoBehaviour:
   onToggleRemote:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1472829264715768}
-        m_MethodName: SetActive
+      - m_Target: {fileID: 114266738273774906}
+        m_MethodName: ToggleRenderersDelayed
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2140,6 +2141,20 @@ MonoBehaviour:
   gunAudio: {fileID: 82522159431284036}
   impactPrefab: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d,
     type: 2}
+--- !u!114 &114266738273774906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1472829264715768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8871ad9646c8a104db5c611a0a366e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnOnDelay: 0.1
+  turnOffDelay: 3.5
+  enabledOnLoad: 0
 --- !u!114 &114326730334097988
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 223152824897599594}
   - component: {fileID: 114239086487834576}
   - component: {fileID: 114681849575467240}
-  - component: {fileID: 114957672706351334}
+  - component: {fileID: 114879448195967060}
   m_Layer: 5
   m_Name: Player Canvas
   m_TagString: Untagged
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 114658568377886480}
   - component: {fileID: 225989141831619002}
   m_Layer: 5
-  m_Name: Damage Flash
+  m_Name: DamagedFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,8 +253,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: b3ae19d3ab92b904c9071638c9b65e6b, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -333,11 +333,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 583cc856362205f40898f7f617be0846, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1902257267335660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa8444e05b4b9d4bb91d31788d5cd02, type: 3}
+  m_Script: {fileID: 11500000, guid: 93eb06d921097784f8651ebb37d23f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadeSpeed: 10
@@ -709,7 +709,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Kills:'
+  m_Text: Kills
+--- !u!114 &114879448195967060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889172430273574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f183d9e3054e042aea6fcd18b4d04d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reticule: {fileID: 114369780450327104}
+  damageImage: {fileID: 114658568377886480}
+  gameStatusText: {fileID: 114527630445243542}
+  healthValue: {fileID: 114721829630367850}
+  killsValue: {fileID: 114521223176869746}
+  logText: {fileID: 114507182441609482}
+  deathAudio: {fileID: 82194351845091364}
 --- !u!114 &114887232308116864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -724,24 +742,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!114 &114957672706351334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1889172430273574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faf197656dbd3de4bb0fd4126171156d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reticule: {fileID: 114369780450327104}
-  damageImage: {fileID: 114658568377886480}
-  gameStatusText: {fileID: 114527630445243542}
-  healthValue: {fileID: 114721829630367850}
-  killsValue: {fileID: 114521223176869746}
-  logText: {fileID: 114507182441609482}
-  deathAudio: {fileID: 82194351845091364}
 --- !u!222 &222089061140481070
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -879,7 +879,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 5, y: 5}
+  m_SizeDelta: {x: 21, y: 21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224418121640465740
 RectTransform:
@@ -916,8 +916,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: -0.25}
+  m_SizeDelta: {x: 731, y: 411.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224531065912577872
 RectTransform:
