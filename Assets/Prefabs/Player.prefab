@@ -2220,9 +2220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 4502427206012844}
-  handMount: {fileID: 0}
+  handMount: {fileID: 4305530135754946}
   gunPivot: {fileID: 4319170670423796}
-  threshhold: 10
+  threshold: 10
   smoothing: 5
 --- !u!114 &114460570618717824
 MonoBehaviour:
