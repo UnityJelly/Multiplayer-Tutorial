@@ -58,6 +58,8 @@ GameObject:
   - component: {fileID: 114408424004475636}
   - component: {fileID: 114968369361667742}
   - component: {fileID: 114849369912114756}
+  - component: {fileID: 95002892424923316}
+  - component: {fileID: 114460570618717824}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -517,14 +519,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4236042930291104}
-  - component: {fileID: 95757030468014528}
   m_Layer: 0
   m_Name: char_robotGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1482836094246932
 GameObject:
   m_ObjectHideFlags: 1
@@ -2006,17 +2007,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95757030468014528
+--- !u!95 &95002892424923316
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1472829264715768}
+  m_GameObject: {fileID: 1010137405080504}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3974b181f8f59754ca61fd0985a39b73, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
+  m_Controller: {fileID: 9100000, guid: 4b2cee8301044454e858d01a49b35169, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
@@ -2070,7 +2071,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1253345111782616}
         m_MethodName: SetActive
         m_Mode: 0
         m_Arguments:
@@ -2191,6 +2192,25 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 15
   m_InterpolateMovement: 1
+--- !u!114 &114460570618717824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010137405080504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95002892424923316}
+  m_ParameterSendBits: 15
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &114849369912114756
 MonoBehaviour:
   m_ObjectHideFlags: 1
