@@ -91,7 +91,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &421112701
+--- !u!1001 &1115896462
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -129,20 +129,6 @@ Prefab:
     - target: {fileID: 4574852607869454, guid: 966a00af0ca0a444da3c08db2f4fcf9b, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114215791016167704, guid: 966a00af0ca0a444da3c08db2f4fcf9b,
-        type: 2}
-      propertyPath: onToggleShared.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1472829264715768, guid: 966a00af0ca0a444da3c08db2f4fcf9b, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 95757030468014528, guid: 966a00af0ca0a444da3c08db2f4fcf9b,
-        type: 2}
-      propertyPath: m_ApplyRootMotion
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 966a00af0ca0a444da3c08db2f4fcf9b, type: 2}
