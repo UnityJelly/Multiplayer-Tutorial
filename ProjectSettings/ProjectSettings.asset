@@ -485,6 +485,6 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   cloudProjectId: 41175481-9dd2-4123-acfe-8563ff9a0e5b
-  projectName: New Unity Project
+  projectName: Core-5.5-Multiplayer-FPS
   organizationId: dramen76
   cloudEnabled: 0
