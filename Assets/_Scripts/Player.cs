@@ -70,8 +70,11 @@ public class Player : NetworkBehaviour
 
     public void Die()
     {
+        if (isLocalPlayer || playerControllerId == -1)
+            anim.SetTrigger("Died");
+            PlayerCanvas.canvas.PlayDeathAudio();
 
-        if(isLocalPlayer)
+        if (isLocalPlayer)
         {
             PlayerCanvas.canvas.WriteGameStatusText("You Died HAHA!");
             PlayerCanvas.canvas.PlayDeathAudio();
@@ -85,6 +88,9 @@ public class Player : NetworkBehaviour
 
     void Respawn()
     {
+        if (isLocalPlayer || playerControllerId == -1)
+            anim.SetTrigger("Restart");
+
         if (isLocalPlayer)
         {
             Transform spawn = NetworkManager.singleton.GetStartPosition();

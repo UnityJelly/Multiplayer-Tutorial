@@ -33,7 +33,6 @@ public class GunPositionSync : NetworkBehaviour
             pitch = cameraTransform.localRotation.eulerAngles.x;
             if (Mathf.Abs(lastSyncedPitch - pitch) >= threshold)
             {
-                print("yay");
                 CmdUpdatePitch(pitch);
                 lastSyncedPitch = pitch;
             }
@@ -53,7 +52,6 @@ public class GunPositionSync : NetworkBehaviour
     [Command]
     void CmdUpdatePitch(float newPitch)
     {
-        print("Yay some more");
         pitch = newPitch;
     }
     void OnAnimatorIK()

@@ -84,4 +84,9 @@ public class PlayerShooting : NetworkBehaviour
         if(isLocalPlayer)
             PlayerCanvas.canvas.SetKills(value);
     }
+
+    public void FireAsBot()
+    {
+        CmdFireShot(firePosition.position, firePosition.forward);
+    }
 }
