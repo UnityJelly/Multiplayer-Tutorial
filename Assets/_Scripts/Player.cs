@@ -7,17 +7,16 @@ public class ToggleEvent : UnityEvent<bool> { }
 
 public class Player : NetworkBehaviour
 {
-    [SerializeField]
-    ToggleEvent onToggleShared;
-    [SerializeField]
-    ToggleEvent onToggleLocal;
-    [SerializeField]
-    ToggleEvent onToggleRemote;
-    [SerializeField]
-    float respawnTime = 5f;
+    [SyncVar (hook = "OnNameChanged")] public string playerName;
+    [SyncVar(hook = "OnColorChanged")] public Color playerColor;
+
+    [SerializeField] ToggleEvent onToggleShared;
+    [SerializeField] ToggleEvent onToggleLocal;
+    [SerializeField] ToggleEvent onToggleRemote;
+    [SerializeField] float respawnTime = 5f;
 
     GameObject mainCamera;
-    NetworkAnimator anim;
+    NetworkAnimator anim; 
 
     void Start()
     {
@@ -95,5 +94,18 @@ public class Player : NetworkBehaviour
         }
 
         EnablePlayer();
+    }
+
+    void OnNameChanged(string value)
+    {
+        playerName = value;
+        gameObject.name = playerName;
+        //Set text
+    }
+
+    void OnColorChanged(Color value)
+    {
+        playerColor = value;
+        GetComponentInChildren<RendererToggler>().ChangeColor(playerColor);
     }
 }
