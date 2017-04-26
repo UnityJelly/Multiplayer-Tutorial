@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class ToggleEvent : UnityEvent<bool> { }
@@ -100,7 +101,7 @@ public class Player : NetworkBehaviour
     {
         playerName = value;
         gameObject.name = playerName;
-        //Set text
+        GetComponentInChildren<Text>(true).text = playerName;
     }
 
     void OnColorChanged(Color value)
