@@ -3,21 +3,20 @@ using UnityEngine.Networking;
 
 public class PlayerShooting : NetworkBehaviour
 {
-    [SerializeField]
-    float shotCooldown = .3f;
-    [SerializeField]
-    Transform firePosition;
-    [SerializeField]
-    ShotEffectsManager shotEffects;
+    [SerializeField] float shotCooldown = .3f;
+    [SerializeField] int killsToWin = 5; // TODO Increase or switch over to timer system
+    [SerializeField] Transform firePosition;
+    [SerializeField] ShotEffectsManager shotEffects;
 
     [SyncVar (hook = "OnScoreChanged")] int score;
-   
 
+    Player player;
     float elapsedTime;
     bool canShoot;
 
     void Start()
     {
+        player = GetComponent<Player>();
         shotEffects.Initialize();
 
         if (isLocalPlayer)
@@ -61,8 +60,8 @@ public class PlayerShooting : NetworkBehaviour
             if (enemy != null)
             {
                 bool wasKillShot = enemy.TakeDamage();
-                if (wasKillShot)
-                score++;
+                if (wasKillShot && ++score >= killsToWin)
+                    player.Won();
             }
         }
 

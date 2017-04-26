@@ -2,6 +2,7 @@
 using UnityEngine.Networking;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class ToggleEvent : UnityEvent<bool> { }
@@ -16,6 +17,9 @@ public class Player : NetworkBehaviour
     [SerializeField] ToggleEvent onToggleRemote;
     [SerializeField] float respawnTime = 5f;
 
+    static List<Player> players = new List<Player>();
+
+
     GameObject mainCamera;
     NetworkAnimator anim; 
 
@@ -25,6 +29,22 @@ public class Player : NetworkBehaviour
         mainCamera = Camera.main.gameObject;
 
         EnablePlayer();
+    }
+
+    [ServerCallback]
+    void OnEnable()
+    {
+        {
+            if (!players.Contains(this))
+                players.Add(this);
+        }
+    }
+
+    [ServerCallback]
+    void OnDisable()
+    {
+        if (players.Contains(this))
+            players.Remove(this);
     }
 
     void Update()
@@ -114,5 +134,36 @@ public class Player : NetworkBehaviour
     {
         playerColor = value;
         GetComponentInChildren<RendererToggler>().ChangeColor(playerColor);
+    }
+
+    [Server]
+    public void Won()
+    {
+        for (int i = 0; i < players.Count; i++)
+            players[i].RpcGameOver(netId, name);
+
+        Invoke("BackToLobby", 5f);
+    }
+
+    [ClientRpc]
+    void RpcGameOver(NetworkInstanceId networkID, string name)
+    {
+        DisablePlayer();
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        if (isLocalPlayer)
+        {
+            if (netId == networkID)
+                PlayerCanvas.canvas.WriteGameStatusText("You Won!");
+            else
+                PlayerCanvas.canvas.WriteGameStatusText("Game Over!\n" + name + " Won");
+        }
+    }
+
+    void BackToLobby()
+    {
+        FindObjectOfType<NetworkLobbyManager>().SendReturnToLobby();
     }
 }

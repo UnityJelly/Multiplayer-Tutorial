@@ -2528,6 +2528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotCooldown: 0.3
+  killsToWin: 2
   firePosition: {fileID: 4350556874691818}
   shotEffects: {fileID: 114258595064333020}
 --- !u!124 &124597590119775568
